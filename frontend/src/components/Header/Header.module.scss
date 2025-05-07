@@ -1,0 +1,78 @@
+@use '../../styles/base/variables' as *;
+@use '../../styles/base/mixins' as *;
+
+.headerWrapper {
+  @include container;
+  @include flexRow;
+  @include flexCenter;
+  justify-content: space-between;
+  height: 70px;
+  background-color: $color-card-bg;
+  border-bottom: 1px solid $color-border-light;
+  border-radius: $radius-xxl;
+  margin: $spacing-lg auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  gap: 16px;
+}
+.logo{
+  @include coverImage;
+  width: $image-size-md;
+}
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: $color-hover-bg;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $radius-md;
+}
+
+.searchInput {
+  border: none;
+  background: transparent;
+  color: $color-text-main;
+  font-size: $font-size-sm;
+  padding: 4px 8px;
+  width: $container-third;
+
+  &::placeholder {
+    color: $color-placeholder;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.searchButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 4px;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.authButton,
+.profileButton {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  background-color: $color-primary;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $color-primary-hover;
+  }
+}

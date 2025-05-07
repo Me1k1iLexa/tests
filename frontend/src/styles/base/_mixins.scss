@@ -1,0 +1,162 @@
+@use './variables' as *;
+
+// Container mixins
+@mixin container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $spacing-lg;
+  padding-right: $spacing-lg;
+}
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+
+}
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin textEllipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//Button mixins
+@mixin buttonReset {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+@mixin buttonBase($bg-color, $text-color, $hover-color) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-md;
+  background-color: $bg-color;
+  color: $text-color;
+  font-size: $font-size-base;
+  font-weight: 500;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  &:disabled {
+    background-color: $color-disabled;
+    cursor: not-allowed;
+  }
+}
+
+//Table mixins
+@mixin tableTemplate($hover: true, $striped: false) {
+  width: 100%;
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+    min-width: $container-half;
+    border-collapse: collapse;
+  }
+
+  thead {
+    background-color: $color-table-header;
+  }
+
+  th, td {
+    padding: $spacing-sm $spacing-md;
+    text-align: left;
+    border-bottom: 1px solid $color-table-border;
+    font-size: $font-size-base;
+    height: 48px;
+  }
+
+  th {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-lg;
+    height: 56px;
+  }
+
+  tbody tr {
+    background-color: $color-table-row;
+  }
+
+  @if $hover {
+    tbody tr:hover {
+      background-color: $color-table-row-hover;
+    }
+  }
+
+  @if $striped {
+    tbody tr:nth-child(odd) {
+      background-color: $color-table-row-hover;
+    }
+  }
+}
+
+// Input mixins
+@mixin inputBase {
+  width: 100%;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-base;
+  color: $color-text-main;
+  background-color: $color-input-bg;
+  border: 1px solid $color-input-border;
+  border-radius: $radius-md;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &::placeholder {
+    color: $color-input-placeholder;
+    opacity: 1;
+  }
+
+  &:focus {
+    border-color: $color-input-focus-border;
+    background-color: $color-input-bg;
+  }
+}
+// Image mixins
+@mixin coverImage {
+  object-fit: cover;
+}
+
+@mixin containImage {
+  object-fit: contain;
+}
+
+@mixin imageCenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin imageCircle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@mixin imageShadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@mixin responsiveImage {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

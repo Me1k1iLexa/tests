@@ -1,0 +1,49 @@
+@use '../../styles/base/variables' as *;
+@use '../../styles/base/mixins' as *;
+
+.registerForm {
+  @include container;
+  max-width: 400px;
+  margin-top: $spacing-xxl;
+  padding: $spacing-lg;
+  background-color: $color-card-bg;
+  border-radius: $radius-md;
+  box-shadow: $shadow-md;
+}
+
+.registerTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-lg;
+  text-align: center;
+}
+
+.inputField {
+  @include inputBase;
+  margin-bottom: $spacing-md;
+}
+
+.buttonWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  align-items: center;
+  margin-top: $spacing-lg;
+}
+
+.registerButton {
+  @include buttonBase($color-primary, #fff, $color-primary-hover);
+  width: 100%;
+}
+
+.loginLink {
+  font-size: $font-size-sm;
+  color: $color-primary;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $color-primary-hover;
+  }
+}
+

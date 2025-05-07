@@ -1,0 +1,19 @@
+@use '../../styles/base/variables' as *;
+@use '../../styles/base/mixins' as *;
+
+.adminPage {
+  @include container;
+  padding-top: $spacing-xxl;
+  padding-bottom: $spacing-xxl;
+}
+
+.noUsers {
+  margin-top: $spacing-md;
+  color: $color-text-light;
+}
+
+.tableWrapper {
+  @include tableTemplate($hover: true, $striped: false);
+  margin-top: $spacing-lg;
+}
+

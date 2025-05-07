@@ -1,0 +1,53 @@
+@use './variables' as *;
+
+// Body
+body {
+  font-family: $font-main;
+  font-size: $font-size-base;
+  color: $color-text-main;
+  background-color: $color-background;
+  line-height: 1.5;
+}
+
+// Titles
+h1 {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+}
+
+h2 {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+}
+
+h3 {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+}
+
+h4, h5, h6 {
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+}
+
+// Description
+p {
+  margin-bottom: $spacing-md;
+}
+
+// Links
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $color-primary-hover;
+  }
+}
+
+// Small text
+small {
+  font-size: 0.875em;
+  color: $color-text-light;
+}

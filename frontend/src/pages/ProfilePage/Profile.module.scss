@@ -1,0 +1,33 @@
+@use '../../styles/base/variables' as *;
+@use '../../styles/base/mixins' as *;
+
+.profilePage {
+  @include container;
+  @include flexColumn;
+  padding: $spacing-xl;
+  margin: $spacing-xl auto $spacing-xl auto;
+  background-color: $color-card-bg;
+  border-radius: $radius-lg;
+  width:$container-quarter;
+}
+
+.profileTitle {
+  margin-bottom: $spacing-lg;
+}
+
+.profileInfo {
+  margin-bottom: $spacing-lg;
+
+  p {
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-base;
+    color: $color-text-main;
+  }
+}
+
+.logoutButton {
+  @include buttonBase($color-danger, #fff, $color-danger-hover);
+  text-transform: uppercase;
+  width: 100%;
+  max-width: 300px;
+}

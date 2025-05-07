@@ -1,0 +1,37 @@
+@use '../../styles/base/variables' as *;
+@use '../../styles/base/mixins' as *;
+
+.loginForm {
+  @include container;
+  max-width: 400px;
+  margin-top: $spacing-xxl;
+  padding: $spacing-lg;
+  background-color: $color-card-bg;
+  border-radius: $radius-md;
+  box-shadow: $shadow-md;
+}
+
+.loginTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-lg;
+  text-align: center;
+}
+
+.inputField {
+  @include inputBase;
+  margin-bottom: $spacing-md;
+}
+
+.loginButton {
+  @include buttonBase($color-primary, #fff, $color-primary-hover);
+  width: 100%;
+  margin-top: $spacing-md;
+}
+
+.errorMessage {
+  margin-top: $spacing-sm;
+  color: $color-danger;
+  text-align: center;
+}
+
