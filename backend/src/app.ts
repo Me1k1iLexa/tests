@@ -6,7 +6,10 @@ import adminRoutes from "./routes/admin.route";
 import userRoutes from "./routes/user.route";
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5174',
+    credentials: true,
+}))
 app.use(express.json());
 app.use("/api", authRoutes);
 app.use("/api/admin", adminRoutes);
